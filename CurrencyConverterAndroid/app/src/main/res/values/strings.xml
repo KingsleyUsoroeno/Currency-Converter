@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Currency-Converter-Android</string>
+
+    <string name="sign_up">Sign up</string>
+    <string name="currency_calculator">Currency \nCalculator</string>
+    <string name="required">*Required</string>
+    <string name="text_link">Mid-market exchange rate at 13:38 UTC</string>
+    <string name="convert">Convert</string>
+
+    <string name="i">i</string>
+    <string name="todo">TODO</string>
+    <string name="sort_icon">Sort Icon</string>
+    <string name="full_stop">.</string>
+
+</resources>

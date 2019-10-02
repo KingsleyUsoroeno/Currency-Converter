@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_50"
+    android:padding="@dimen/dimen_2">
+
+    <ImageView
+        android:id="@+id/img_flag"
+        android:layout_width="@dimen/dimen_26"
+        android:layout_height="@dimen/dimen_26"
+        android:layout_margin="@dimen/dimen_12"
+        android:src="@drawable/eu_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_10"
+        android:fontFamily="@font/open_sans"
+        android:textAllCaps="true"
+        android:textSize="@dimen/text_size_18"
+        app:layout_constraintBottom_toBottomOf="@id/img_flag"
+        app:layout_constraintStart_toEndOf="@id/img_flag"
+        app:layout_constraintTop_toTopOf="@id/img_flag"
+        tools:text="EUR" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

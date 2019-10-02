@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:id="@+id/parentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_12"
+                android:layout_marginRight="@dimen/dimen_12"
+                android:padding="@dimen/dimen_4"
+                android:text="@string/sign_up"
+                android:textColor="@color/jade_green"
+                android:textSize="@dimen/text_size_18"
+                app:fontFamily="@font/open_sans_semibold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.05" />
+
+            <ImageView
+                android:id="@+id/img_sort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_12"
+                android:layout_marginLeft="@dimen/dimen_12"
+                android:contentDescription="@string/sort_icon"
+                android:padding="@dimen/dimen_4"
+                android:src="@drawable/ic_sort"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvSignUp" />
+
+            <TextView
+                android:id="@+id/tvCurrencyCal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_18"
+                android:padding="@dimen/dimen_6"
+                android:text="@string/currency_calculator"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="28sp"
+                app:fontFamily="@font/open_sans_semibold"
+                app:layout_constraintStart_toStartOf="@id/img_sort"
+                app:layout_constraintTop_toBottomOf="@id/img_sort" />
+
+            <TextView
+                android:id="@+id/tvDot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_27"
+                android:text="@string/full_stop"
+                android:textColor="@color/jade_green"
+                android:textSize="40sp"
+                app:fontFamily="@font/open_sans_semibold"
+                app:layout_constraintBottom_toBottomOf="@id/tvCurrencyCal"
+                app:layout_constraintRight_toRightOf="@id/tvCurrencyCal"
+                app:layout_constraintTop_toTopOf="@id/tvCurrencyCal" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputAmount"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20"
+                app:errorEnabled="true"
+                app:helperText="@string/required"
+                app:layout_constraintEnd_toEndOf="@id/tvSignUp"
+                app:layout_constraintStart_toStartOf="@id/img_sort"
+                app:layout_constraintTop_toBottomOf="@id/tvCurrencyCal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutResult"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="60dp"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:background="@drawable/text_background"
+                app:layout_constraintLeft_toLeftOf="@id/textInputAmount"
+                app:layout_constraintRight_toRightOf="@id/textInputAmount"
+                app:layout_constraintTop_toBottomOf="@id/textInputAmount">
+
+                <TextView
+                    android:id="@+id/tvCountry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dimen_12"
+                    android:layout_marginRight="@dimen/dimen_12"
+                    android:textSize="@dimen/text_size_20"
+                    app:fontFamily="@font/open_sans"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="PLN" />
+
+                <TextView
+                    android:id="@+id/tvConversionRate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_12"
+                    android:layout_marginLeft="@dimen/dimen_12"
+                    android:layout_marginEnd="@dimen/dimen_8"
+                    android:layout_marginRight="@dimen/dimen_8"
+                    android:ellipsize="end"
+                    android:textColor="@color/textPrimaryColor"
+                    android:textSize="@dimen/text_size_20"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/tvCountry"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="4.45689" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Spinner
+                android:id="@+id/fromSpinner"
+                android:layout_width="130dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/dimen_18"
+                android:background="@drawable/spinner_background"
+                app:layout_constraintStart_toStartOf="@id/layoutResult"
+                app:layout_constraintTop_toBottomOf="@id/layoutResult" />
+
+            <Spinner
+                android:id="@+id/toSpinner"
+                android:layout_width="130dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/dimen_18"
+                android:background="@drawable/spinner_background"
+                app:layout_constraintEnd_toEndOf="@id/layoutResult"
+                app:layout_constraintTop_toBottomOf="@id/layoutResult" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConvert"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="70dp"
+                android:text="@string/convert"
+                android:textSize="@dimen/text_size_20"
+                app:backgroundTint="@color/jade_green"
+                app:cornerRadius="@dimen/dimen_8"
+                app:fontFamily="@font/open_sans_semibold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/layoutResult"
+                app:layout_constraintStart_toStartOf="@id/layoutResult"
+                app:layout_constraintTop_toBottomOf="@id/fromSpinner" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/ic_swap_horiz"
+                app:layout_constraintBottom_toBottomOf="@id/fromSpinner"
+                app:layout_constraintEnd_toStartOf="@id/fromSpinner"
+                app:layout_constraintStart_toEndOf="@id/toSpinner"
+                app:layout_constraintTop_toTopOf="@id/toSpinner" />
+
+            <TextView
+                android:id="@+id/tvLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_12"
+                android:text="@string/text_link"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size_16"
+                app:layout_constraintLeft_toLeftOf="@id/btnConvert"
+                app:layout_constraintRight_toRightOf="@id/btnConvert"
+                app:layout_constraintTop_toBottomOf="@id/btnConvert" />
+
+            <View
+                android:id="@+id/guideline"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintLeft_toLeftOf="@id/tvLink"
+                app:layout_constraintRight_toRightOf="@id/tvLink"
+                app:layout_constraintTop_toBottomOf="@id/tvLink" />
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_8"
+                android:layout_marginLeft="@dimen/dimen_8"
+                android:background="@drawable/circular_gray"
+                android:gravity="center"
+                android:text="@string/i"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size_12"
+                app:fontFamily="@font/open_sans"
+                app:layout_constraintBottom_toBottomOf="@id/tvLink"
+                app:layout_constraintStart_toEndOf="@id/tvLink"
+                app:layout_constraintTop_toTopOf="@id/tvLink" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>
